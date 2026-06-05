@@ -39,6 +39,8 @@ export default function SubscriptionSettings() {
       profile_title: '',
       announce: '',
       announce_url: '',
+      happ_routing: '',
+      incy_routing: '',
       allow_browser_config: true,
       disable_sub_template: false,
       randomize_order: false,
@@ -122,6 +124,8 @@ export default function SubscriptionSettings() {
         profile_title: subscriptionData.profile_title || '',
         announce: subscriptionData.announce || '',
         announce_url: subscriptionData.announce_url || '',
+        happ_routing: (subscriptionData as any).happ_routing || '',
+        incy_routing: (subscriptionData as any).incy_routing || '',
         allow_browser_config: subscriptionData.allow_browser_config ?? true,
         disable_sub_template: subscriptionData.disable_sub_template ?? false,
         randomize_order: subscriptionData.randomize_order ?? false,
@@ -271,7 +275,7 @@ export default function SubscriptionSettings() {
 
   const handleCancel = () => {
     if (settings?.subscription) {
-      const subscriptionData = settings.subscription
+      const subscriptionData = settings.subscription as any
       form.reset({
         url_prefix: subscriptionData.url_prefix || '',
         update_interval: subscriptionData.update_interval || 24,
@@ -279,6 +283,8 @@ export default function SubscriptionSettings() {
         profile_title: subscriptionData.profile_title || '',
         announce: subscriptionData.announce || '',
         announce_url: subscriptionData.announce_url || '',
+        happ_routing: subscriptionData.happ_routing || '',
+        incy_routing: subscriptionData.incy_routing || '',
         allow_browser_config: subscriptionData.allow_browser_config ?? true,
         disable_sub_template: subscriptionData.disable_sub_template ?? false,
         randomize_order: subscriptionData.randomize_order ?? false,

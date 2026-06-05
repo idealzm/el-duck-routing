@@ -1430,6 +1430,8 @@ export interface Subscription {
   /** @maxLength 128 */
   announce?: string
   announce_url?: string
+  happ_routing?: string
+  incy_routing?: string
   response_headers?: SubscriptionResponseHeaders
   rules: SubRule[]
   manual_sub_request?: SubFormatEnable
