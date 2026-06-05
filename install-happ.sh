@@ -132,9 +132,9 @@ install_command() {
     colorized_echo "$CYAN" "  1. Open the panel in your browser"
     colorized_echo "$CYAN" "  2. Go to Settings > Subscriptions"
     colorized_echo "$CYAN" "  3. In HAPP Routing field, paste the output of:"
-    colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/hydraponique/roscomvpn-routing/refs/heads/main/HAPP/DEFAULT.DEEPLINK"
+    colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/idealzm/roscomvpn-routing/refs/heads/main/HAPP/DEFAULT.DEEPLINK"
     colorized_echo "$CYAN" "  4. In INCY Routing field, paste the output of:"
-    colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/hydraponique/roscomvpn-routing/refs/heads/main/INCY/DEFAULT.DEEPLINK"
+    colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/idealzm/roscomvpn-routing/refs/heads/main/INCY/DEFAULT.DEEPLINK"
     colorized_echo "$CYAN" "  5. Save settings"
 }
 
