@@ -5,8 +5,8 @@ on:
         inputs:
             tag:
                 description: 'Docker image tag (e.g. happ-routing-v1)'
-                required: true
-                default: 'happ-routing-latest'
+                required: false
+                default: 'happ-routing-v1'
     push:
         branches:
             - main
@@ -65,7 +65,7 @@ jobs:
             - name: Log in to GHCR
               uses: docker/login-action@v4
               with:
-                  registry: ${{ env.REGISTRY }}
+                  registry: ghcr.io
                   username: ${{ github.actor }}
                   password: ${{ secrets.GITHUB_TOKEN }}
 
@@ -73,9 +73,9 @@ jobs:
               id: meta
               uses: docker/metadata-action@v5
               with:
-                  images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+                  images: ghcr.io/${{ github.repository_owner }}/el-duck-routing
                   tags: |
-                      type=raw,value=${{ inputs.tag || 'happ-routing-latest' }}
+                      type=raw,value=${{ inputs.tag || 'happ-routing-v1' }}
                       type=sha,prefix=happ-routing-
 
             - name: Build and push Docker image
