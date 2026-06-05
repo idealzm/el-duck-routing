@@ -4,9 +4,10 @@
 заголовок routing с содержимым поля "HAPP Routing".
 Когда клиент с User-Agent INCY/* — содержимое поля "INCY Routing".
 
-Значения полей — deeplink-ссылки, которые нужно взять из:
-  HAPP:  https://raw.githubusercontent.com/idealzm/roscomvpn-routing/refs/heads/main/HAPP/DEFAULT.DEEPLINK
-  INCY:  https://raw.githubusercontent.com/idealzm/roscomvpn-routing/refs/heads/main/INCY/DEFAULT.DEEPLINK
+Deeplink-ссылки (профиль "el-duckVPN"):
+
+  HAPP  https://github.com/idealzm/roscomvpn-routing/blob/main/HAPP/DEFAULT.DEEPLINK
+  INCY  https://github.com/idealzm/roscomvpn-routing/blob/main/INCY/DEFAULT.DEEPLINK
 
 Установка с нуля:
 
