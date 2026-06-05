@@ -173,6 +173,24 @@ export function SubscriptionGeneralSettingsSection({ form }: SubscriptionGeneral
 
         <FormField
           control={form.control}
+          name="incy_routing"
+          render={({ field }) => (
+            <FormItem className="space-y-2">
+              <FormLabel className="flex items-center gap-2 text-xs font-medium sm:text-sm">
+                <Route className="h-4 w-4" />
+                {t('settings.subscriptions.general.incyRouting')}
+              </FormLabel>
+              <FormControl>
+                <Textarea placeholder="incy://routing/onadd/..." rows={3} className="resize-none font-mono text-xs sm:text-sm" {...field} />
+              </FormControl>
+              <FormDescription className="text-xs text-muted-foreground sm:text-sm">{t('settings.subscriptions.general.incyRoutingDescription')}</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="allow_browser_config"
           render={({ field }) => (
             <FormItem className="flex flex-row items-center justify-between space-y-0 rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 sm:p-4 lg:col-span-2">

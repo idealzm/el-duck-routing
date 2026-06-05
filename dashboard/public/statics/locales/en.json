@@ -251,7 +251,9 @@
         "randomizeOrder": "Randomize Subscription Order",
         "randomizeOrderDescription": "Shuffle configuration order on each subscription request",
         "happRouting": "HAPP Routing",
-        "happRoutingDescription": "HAPP routing deeplink (happ://routing/onadd/...) sent as a response header to Happ clients. Leave empty to disable. Get routing configs from roscomvpn-routing repository."
+        "happRoutingDescription": "Deeplink for Happ clients only (happ://routing/onadd/...), sent as routing header. Leave empty to disable.",
+        "incyRouting": "INCY Routing",
+        "incyRoutingDescription": "Deeplink for INCY clients only (incy://routing/onadd/...), sent as routing header. Leave empty to disable."
       },
       "responseHeaders": {
         "title": "Response Headers",

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-# PasarGuard Panel + HAPP Routing Mod Installer
+# PasarGuard Panel + HAPP/INCY Routing Mod Installer
 # Usage: sudo bash install-happ.sh [OPTIONS]
 #
 # Options:
@@ -81,7 +81,7 @@ install_command() {
     local FULL_IMAGE="${IMAGE_REGISTRY}/${IMAGE_REPO}:${IMAGE_TAG}"
 
     colorized_echo "$GREEN" "=============================================="
-    colorized_echo "$GREEN" "  PasarGuard Panel + HAPP Routing Mod"
+    colorized_echo "$GREEN" "  PasarGuard Panel + HAPP/INCY Routing Mod"
     colorized_echo "$GREEN" "=============================================="
     colorized_echo "$CYAN" "Image: ${FULL_IMAGE}"
     echo ""
@@ -99,7 +99,7 @@ install_command() {
     eval "$INSTALL_CMD"
 
     # Replace image in docker-compose.yml
-    colorized_echo "$BLUE" "Switching to HAPP routing mod image: ${FULL_IMAGE}"
+    colorized_echo "$BLUE" "Switching to HAPP/INCY routing mod image: ${FULL_IMAGE}"
     detect_compose
 
     # Install yq if needed
@@ -117,7 +117,7 @@ install_command() {
         fi
     done
 
-    colorized_echo "$BLUE" "Pulling HAPP routing mod image..."
+    colorized_echo "$BLUE" "Pulling HAPP/INCY routing mod image..."
     $COMPOSE -f "$COMPOSE_FILE" -p "$APP_NAME" pull
 
     colorized_echo "$BLUE" "Restarting with new image..."
@@ -126,14 +126,16 @@ install_command() {
 
     echo ""
     colorized_echo "$GREEN" "=============================================="
-    colorized_echo "$GREEN" "  HAPP Routing Mod Installed!"
+    colorized_echo "$GREEN" "  HAPP/INCY Routing Mod Installed!"
     colorized_echo "$GREEN" "=============================================="
     colorized_echo "$CYAN" "Next steps:"
     colorized_echo "$CYAN" "  1. Open the panel in your browser"
     colorized_echo "$CYAN" "  2. Go to Settings > Subscriptions"
     colorized_echo "$CYAN" "  3. In HAPP Routing field, paste the output of:"
     colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/hydraponique/roscomvpn-routing/refs/heads/main/HAPP/DEFAULT.DEEPLINK"
-    colorized_echo "$CYAN" "  4. Save settings"
+    colorized_echo "$CYAN" "  4. In INCY Routing field, paste the output of:"
+    colorized_echo "$CYAN" "     curl -sL https://raw.githubusercontent.com/hydraponique/roscomvpn-routing/refs/heads/main/INCY/DEFAULT.DEEPLINK"
+    colorized_echo "$CYAN" "  5. Save settings"
 }
 
 update_command() {
@@ -166,12 +168,12 @@ case "${1:-}" in
                  update)  shift; update_command "$@" ;;
                  *) echo "Usage: $0 @ {install|update} [OPTIONS]"; exit 1 ;;
              esac ;;
-    *)       echo "PasarGuard Panel + HAPP Routing Mod"
+    *)       echo "PasarGuard Panel + HAPP/INCY Routing Mod"
              echo ""
              echo "Usage: $0 {install|update} [OPTIONS]"
              echo ""
-             echo "  install  - Install with HAPP routing mod"
-             echo "  update   - Update HAPP routing mod image"
+              echo "  install  - Install with HAPP/INCY routing mod"
+              echo "  update   - Update HAPP/INCY routing mod image"
              echo ""
              echo "Install options:"
              echo "  --image TAG       Image tag (default: happ-routing-v1)"

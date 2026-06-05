@@ -137,7 +137,9 @@
         "randomizeOrder": "تصادفی‌سازی ترتیب اشتراک",
         "randomizeOrderDescription": "در هر درخواست اشتراک، ترتیب کانفیگ‌ها به‌صورت تصادفی جابه‌جا می‌شود",
         "happRouting": "مسیریابی HAPP",
-        "happRoutingDescription": "دیپ‌لینک مسیریابی HAPP (happ://routing/onadd/...) که به عنوان هدر پاسخ به کلاینت‌های Happ ارسال می‌شود. برای غیرفعال کردن خالی بگذارید. پیکربندی‌های مسیریابی از مخزن roscomvpn-routing در دسترس هستند."
+        "happRoutingDescription": "فقط برای کلاینت‌های Happ (happ://routing/onadd/...)، به عنوان هدر routing ارسال می‌شود. برای غیرفعال کردن خالی بگذارید.",
+        "incyRouting": "مسیریابی INCY",
+        "incyRoutingDescription": "فقط برای کلاینت‌های INCY (incy://routing/onadd/...)، به عنوان هدر routing ارسال می‌شود. برای غیرفعال کردن خالی بگذارید."
       },
       "responseHeaders": {
         "title": "هدرهای پاسخ",

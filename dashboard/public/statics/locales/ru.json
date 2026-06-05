@@ -269,7 +269,9 @@
         "randomizeOrder": "Случайный порядок конфигов",
         "randomizeOrderDescription": "Перемешивать порядок конфигураций при каждом запросе подписки",
         "happRouting": "Маршрутизация HAPP",
-        "happRoutingDescription": "Диплинк маршрутизации HAPP (happ://routing/onadd/...), отправляемый как заголовок ответа клиентам Happ. Оставьте пустым для отключения. Конфигурации маршрутизации доступны в репозитории roscomvpn-routing."
+        "happRoutingDescription": "Только для клиентов Happ (happ://routing/onadd/...), отправляется как заголовок routing. Оставьте пустым для отключения.",
+        "incyRouting": "Маршрутизация INCY",
+        "incyRoutingDescription": "Только для клиентов INCY (incy://routing/onadd/...), отправляется как заголовок routing. Оставьте пустым для отключения."
       },
       "responseHeaders": {
         "title": "Заголовки ответа",

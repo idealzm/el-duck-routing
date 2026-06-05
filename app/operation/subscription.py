@@ -180,8 +180,11 @@ class SubscriptionOperation(BaseOperation):
 
         # Add HAPP routing header if client is Happ and routing is configured
         is_happ = bool(re.match(r"^Happ/", user_agent))
+        is_incy = bool(re.match(r"^INCY/", user_agent))
         if is_happ and sub_settings.happ_routing:
             headers["routing"] = sub_settings.happ_routing
+        if is_incy and sub_settings.incy_routing:
+            headers["routing"] = sub_settings.incy_routing
 
         if extra_headers:
             headers.update(extra_headers)

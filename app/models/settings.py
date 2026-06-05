@@ -246,8 +246,10 @@ class Subscription(BaseModel):
     # only supported by v2RayTun and Happ apps
     announce: str = Field(default="", max_length=128)
     announce_url: str = Field(default="")
-    # HAPP routing deeplink (happ://routing/onadd/...), sent as response header to Happ clients
+    # HAPP routing deeplink (happ://routing/onadd/...), sent as response header to Happ clients only
     happ_routing: str = Field(default="")
+    # INCY routing deeplink (incy://routing/onadd/...), sent as response header to INCY clients only
+    incy_routing: str = Field(default="")
     response_headers: dict[str, Any] = Field(default_factory=dict)
     # Rules To Seperate Clients And Send Config As Needed
     rules: list[SubRule]
