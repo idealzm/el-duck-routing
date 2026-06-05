@@ -233,7 +233,9 @@
         "disableSubTemplate": "禁用订阅模板",
         "disableSubTemplateDescription": "禁用后，浏览器请求将返回 API 响应而不是 HTML 订阅页面",
         "randomizeOrder": "随机化订阅顺序",
-        "randomizeOrderDescription": "每次请求订阅时，随机打乱配置顺序"
+        "randomizeOrderDescription": "每次请求订阅时，随机打乱配置顺序",
+        "happRouting": "HAPP 路由",
+        "happRoutingDescription": "HAPP 路由深度链接 (happ://routing/onadd/...)，作为响应头发送给 Happ 客户端。留空则禁用。可从 roscomvpn-routing 仓库获取路由配置。"
       },
       "responseHeaders": {
         "title": "响应头",

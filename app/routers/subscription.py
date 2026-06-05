@@ -74,6 +74,7 @@ async def user_subscription_with_client_type(
     token: str,
     client_type: ConfigFormat,
     db: AsyncSession = Depends(get_db),
+    user_agent: str = Header(default=""),
     headers=Depends(get_subscription_headers),
 ):
     """Provides a subscription link based on the specified client type (e.g., Clash, V2Ray)."""
@@ -83,5 +84,6 @@ async def user_subscription_with_client_type(
         client_type=client_type,
         request_url=str(request.url),
         accept_header=request.headers.get("Accept", ""),
+        user_agent=user_agent,
         **headers.model_dump(),
     )

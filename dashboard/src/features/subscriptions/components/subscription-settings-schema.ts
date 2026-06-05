@@ -39,6 +39,7 @@ export const subscriptionSchema = z.object({
   profile_title: z.string().optional(),
   announce: z.string().max(128, 'Announcement must be 128 characters or less').optional(),
   announce_url: z.string().url('Please enter a valid URL').optional().or(z.literal('')),
+  happ_routing: z.string().optional(),
   allow_browser_config: z.boolean().optional(),
   disable_sub_template: z.boolean().optional(),
   randomize_order: z.boolean().optional(),

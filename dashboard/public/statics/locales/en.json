@@ -249,7 +249,9 @@
         "disableSubTemplate": "Disable Subscription Template",
         "disableSubTemplateDescription": "When disabled, browser requests will return API responses instead of HTML subscription pages",
         "randomizeOrder": "Randomize Subscription Order",
-        "randomizeOrderDescription": "Shuffle configuration order on each subscription request"
+        "randomizeOrderDescription": "Shuffle configuration order on each subscription request",
+        "happRouting": "HAPP Routing",
+        "happRoutingDescription": "HAPP routing deeplink (happ://routing/onadd/...) sent as a response header to Happ clients. Leave empty to disable. Get routing configs from roscomvpn-routing repository."
       },
       "responseHeaders": {
         "title": "Response Headers",

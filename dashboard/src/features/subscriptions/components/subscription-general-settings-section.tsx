@@ -12,6 +12,7 @@ import {
   HelpCircle,
   Link,
   Megaphone,
+  Route,
   Shuffle,
   User,
 } from 'lucide-react'
@@ -147,6 +148,24 @@ export function SubscriptionGeneralSettingsSection({ form }: SubscriptionGeneral
                 <Input type="url" placeholder={t('settings.subscriptions.general.announceUrlPlaceholder')} {...field} className="font-mono text-xs sm:text-sm" />
               </FormControl>
               <FormDescription className="text-xs text-muted-foreground sm:text-sm">{t('settings.subscriptions.general.announceUrlDescription')}</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="happ_routing"
+          render={({ field }) => (
+            <FormItem className="space-y-2">
+              <FormLabel className="flex items-center gap-2 text-xs font-medium sm:text-sm">
+                <Route className="h-4 w-4" />
+                {t('settings.subscriptions.general.happRouting')}
+              </FormLabel>
+              <FormControl>
+                <Textarea placeholder="happ://routing/onadd/..." rows={3} className="resize-none font-mono text-xs sm:text-sm" {...field} />
+              </FormControl>
+              <FormDescription className="text-xs text-muted-foreground sm:text-sm">{t('settings.subscriptions.general.happRoutingDescription')}</FormDescription>
               <FormMessage />
             </FormItem>
           )}

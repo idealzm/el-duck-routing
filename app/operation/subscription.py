@@ -144,6 +144,7 @@ class SubscriptionOperation(BaseOperation):
         inline: bool = False,
         extra_headers: dict[str, str] | None = None,
         extension: str = "",
+        user_agent: str = "",
     ) -> dict:
         """Create response headers for subscription responses, including user subscription info."""
         # Generate user subscription info
@@ -176,6 +177,12 @@ class SubscriptionOperation(BaseOperation):
             "announce": encode_title(formatted_announce),
             "announce-url": sub_settings.announce_url,
         }
+
+        # Add HAPP routing header if client is Happ and routing is configured
+        is_happ = bool(re.match(r"^Happ/", user_agent))
+        if is_happ and sub_settings.happ_routing:
+            headers["routing"] = sub_settings.happ_routing
+
         if extra_headers:
             headers.update(extra_headers)
         return headers
@@ -390,6 +397,7 @@ class SubscriptionOperation(BaseOperation):
                 sub_settings,
                 inline=inline_view,
                 extra_headers={},
+                user_agent=user_agent,
             )
             try:
                 response_headers.update(
@@ -435,6 +443,7 @@ class SubscriptionOperation(BaseOperation):
         client_type: ConfigFormat,
         request_url: str = "",
         accept_header: str = "",
+        user_agent: str = "",
         x_hwid: str | None = None,
         x_device_os: str | None = None,
         x_ver_os: str | None = None,
@@ -463,7 +472,8 @@ class SubscriptionOperation(BaseOperation):
         )
 
         response_headers = self.create_response_headers(
-            user, request_url, sub_settings, extension=client_config.get(client_type, {}).get("extension", "")
+            user, request_url, sub_settings, extension=client_config.get(client_type, {}).get("extension", ""),
+            user_agent=user_agent,
         )
         try:
             response_headers.update(
